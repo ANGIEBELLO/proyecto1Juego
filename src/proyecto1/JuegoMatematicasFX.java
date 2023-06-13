@@ -3,7 +3,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
 package proyecto1;
-
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -34,7 +33,6 @@ public class JuegoMatematicasFX extends Application {
         launch(args);
     }
 
-    
     @Override
     public void start(Stage primaryStage) {
         random = new Random();
@@ -42,7 +40,7 @@ public class JuegoMatematicasFX extends Application {
         totalPreguntas = 5;
         preguntaActual = 0;
 
-        primaryStage.setTitle("Jungla Matemática");
+        primaryStage.setTitle("Jungla de Matemática");
         VBox root = new VBox();
         root.setAlignment(Pos.CENTER);
         root.setSpacing(20);
@@ -59,6 +57,7 @@ public class JuegoMatematicasFX extends Application {
 
         siguienteButton = new Button("Siguiente");
         siguienteButton.setStyle("-fx-font-size: 16px");
+        siguienteButton.setDisable(false);
         siguienteButton.setOnAction(e -> verificarRespuesta());
 
         root.getChildren().addAll(preguntaLabel, respuestaTextField, resultadoLabel, siguienteButton);
@@ -82,7 +81,6 @@ public class JuegoMatematicasFX extends Application {
             respuestaTextField.clear();
             resultadoLabel.setText("");
 
-            siguienteButton.setDisable(true);
             respuestaTextField.setEditable(true);
         } else {
             resultadoLabel.setText("Juego terminado. Tu puntaje final es: " + puntaje + "/" + totalPreguntas);
@@ -101,7 +99,6 @@ public class JuegoMatematicasFX extends Application {
             resultadoLabel.setText("Respuesta incorrecta. La respuesta correcta era: " + respuestaCorrecta);
         }
 
-        siguienteButton.setDisable(false);
-        respuestaTextField.setEditable(false);
+        siguientePregunta();
     }
 }
