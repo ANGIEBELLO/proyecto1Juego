@@ -40,7 +40,7 @@ public class JuegoMatematicasFX extends Application {
         totalPreguntas = 5;
         preguntaActual = 0;
 
-        primaryStage.setTitle("Jungla de Matemática");
+        primaryStage.setTitle("Jungla Matemática");
         VBox root = new VBox();
         root.setAlignment(Pos.CENTER);
         root.setSpacing(20);
@@ -80,6 +80,7 @@ public class JuegoMatematicasFX extends Application {
             preguntaLabel.setText("Pregunta " + preguntaActual + ": Cuánto es " + numero1 + " + " + numero2 + "?");
             respuestaTextField.clear();
             resultadoLabel.setText("");
+            
 
             respuestaTextField.setEditable(true);
         } else {
@@ -102,3 +103,7 @@ public class JuegoMatematicasFX extends Application {
         siguientePregunta();
     }
 }
+
+
+
+
